@@ -11,6 +11,10 @@ pipeline {
                     archiveArtifacts artifacts: '**/*.war'
                 }
             }
+            stage ('Deploy in staging env') {
+                build job: 'DeployApplicationStagingEnv'
+            }
         }
+        
     }
 }
